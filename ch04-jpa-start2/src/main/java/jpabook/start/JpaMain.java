@@ -18,7 +18,6 @@ public class JpaMain {
 
         try {
 
-
             tx.begin(); //트랜잭션 시작
             logic(em);  //비즈니스 로직
             tx.commit();//트랜잭션 커밋
@@ -37,12 +36,15 @@ public class JpaMain {
 
         String id = "id1";
         Member member = new Member();
-        member.setId(id);
+//        member.setId(id);
         member.setUsername("지한");
         member.setAge(2);
 
         //등록
         em.persist(member);
+
+        id = member.getId();
+        System.out.println("member.id = " + id);
 
         //수정
         member.setAge(20);

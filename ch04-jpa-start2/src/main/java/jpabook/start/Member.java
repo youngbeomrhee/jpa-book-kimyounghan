@@ -15,6 +15,7 @@ public class Member {
 
     @Id
     @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @Column(name = "NAME", nullable = false, length = 10) //추가 //**
